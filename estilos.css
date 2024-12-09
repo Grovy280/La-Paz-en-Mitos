@@ -1,0 +1,201 @@
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
+
+body {
+  background-color: #f0f8ff;
+  background-image: url('imagenes/fondo\ 1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  font-family: "Kanit", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+
+
+
+/* Contenedor general */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* División en pantalla dividida */
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+/* Columna de texto */
+.text-column {
+  width: 50%;
+  padding: 20px;
+}
+
+.titulo {
+  font-size: 2.5rem;
+  color: #cea1a1;
+  margin-bottom: 20px;
+}
+
+.text-column p {
+  font-size: 1rem;
+  color: #c7c2c2;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: cadetblue;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.social-icons i {
+  margin-right: 10px;
+  font-size: 1.5rem;
+  color: cadetblue;
+  cursor: pointer;
+}
+
+/* Columna de imagen */
+.image-column {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rounded-image {
+  width: 80%;
+  max-width: 400px;
+  border-radius: 10%;
+}
+
+  
+/* Barra de navegación */
+.navbar {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 10px 20px;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
+  flex-wrap: wrap; /* Permite que los elementos se ajusten si es necesario */
+}
+
+/* Ajustes para el logo */
+.logo-button {
+  font-size: 24px;
+  font-weight: bold;
+  color: #f00; /* Color rojo sangre */
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  white-space: nowrap; /* Evita el salto de línea en el texto */
+}
+
+/* Estilo para los enlaces de la barra de navegación */
+nav ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap; /* Permite que los enlaces se ajusten */
+  gap: 20px;
+}
+
+nav ul li {
+  position: relative;
+  margin-left: 20px;
+  flex-shrink: 0; /* Evita que los enlaces se encojan demasiado */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-family: 'Creepster', cursive;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+/* Efecto de sangre derramándose */
+nav ul li a:hover {
+  color: #8B0000;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #f00;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.5s ease-in-out;
+}
+
+nav ul li a:hover::after {
+  content: ' ';
+  position: absolute;
+  top: 110%;
+  left: 45%;
+  width: 8px;
+  height: 8px;
+  background-color: #f00;
+  border-radius: 50%;
+  animation: bloodDrip 1s forwards;
+  animation-delay: 0.5s;
+  transform: scaleX(1);
+}
+
+/* Efecto de sangre "derramándose" */
+nav ul li a:hover::before {
+  content: ' ';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: #f00;
+  border-radius: 50%;
+  animation: bloodDrip 1s forwards;
+}
+
+nav ul li a:hover::nth-child(2)::before {
+  content: ' ';
+  position: absolute;
+  top: 100%;
+  left: 53%;
+  width: 12px;
+  height: 12px;
+  background-color: #f00;
+  border-radius: 50%;
+  animation: bloodDrip 1s forwards;
+  animation-delay: 0.8s;
+}
+

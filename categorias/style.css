@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000; /* Fondo negro */
+    color: #fff;
+    overflow: hidden; /* Evita que el contenido desbordado sea visible */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(34, 34, 34, 0.7); /* Fondo oscuro con opacidad */
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra */
+}
+
+.logo-button {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f00; /* Color rojo sangre */
+    text-decoration: none; /* Sin subrayado */
+    padding: 10px 20px; /* Espaciado interno para simular un botón */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: transparent; /* Sin fondo */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+.logo-button:hover {
+    background-color: #f00; /* Fondo rojo al hacer hover */
+    color: #000; /* Cambia el texto a negro al hacer hover */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+
+nav ul li {
+    position: relative; /* Para los efectos */
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff; /* Color blanco normal */
+    font-weight: 600;
+    font-family: 'Creepster', cursive;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease; /* Transición suave para el color */
+}
+    
+
+/* Efecto de sangre derramándose */
+nav ul li a:hover {
+    color: #8B0000; /* Cambiar el color del texto a un rojo más oscuro */
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #f00; /* Rojo sangre */
+    transform: scaleX(0); /* Subrayado inicial oculto */
+    transform-origin: bottom right;
+    transition: transform 0.5s ease-in-out; /* Transición más larga para el subrayado */
+}
+
+/* Agregar otra gota de sangre debajo de la primera */
+nav ul li a:hover::after {
+    content: ' '; /* Añadimos contenido vacío */
+    position: absolute;
+    top: 110%; /* Ajustamos para colocar la segunda gota más abajo */
+    left: 45%;
+    width: 8px;
+    height: 8px;
+    background-color: #f00; /* Color rojo sangre */
+    border-radius: 50%;
+    animation: bloodDrip 1s forwards; /* Animación más lenta para la segunda gota */
+    animation-delay: 0.5s; /* Retraso para que la gota caiga después de la primera */
+    transform: scaleX(1); /* Muestra el subrayado */
+}
+/* Efecto de sangre "derramándose" */
+nav ul li a:hover::before {
+    content: ' '; /* Añadimos contenido vacío */
+    position: absolute;
+    top: 100%; /* Justo debajo del enlace */
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: #f00; /* Color rojo sangre */
+    border-radius: 50%;
+    animation: bloodDrip 1s forwards; /* Animación más lenta */
+}
+
+nav ul li a:hover::nth-child(2)::before {
+    content: ' '; /* Añadimos contenido vacío */
+    position: absolute;
+    top: 100%;
+    left: 53%;
+    width: 12px;
+    height: 12px;
+    background-color: #f00;
+    border-radius: 50%;
+    animation: bloodDrip 1s forwards;
+    animation-delay: 0.8s;
+}
+.projects {
+    position: relative; /* Para que los hijos con 'position: absolute' se coloquen dentro de esta sección */
+    height: 100vh;
+    overflow: hidden; /* Asegura que no se muestren elementos fuera de esta área */
+}
+
+/* Estilos para las imágenes desordenadas */
+.project {
+    position: absolute;
+    opacity: 0.2; /* Baja opacidad inicial */
+    transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease; /* Transición para sombras */
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.6); /* Sombra espesa de color rojo */
+}
+.project::after {
+    content: '';
+    position: absolute;
+    top: -20%; /* Ajustar para un aura más grande */
+    left: -20%; /* Ajustar para un aura más grande */
+    right: -20%; /* Ajustar para un aura más grande */
+    bottom: -20%; /* Ajustar para un aura más grande */
+    background: rgba(255, 255, 255, 0.3); /* Aura blanca con opacidad */
+    border-radius: 10%; /* Bordes redondeados para el aura */
+    opacity: 0; /* Comienza oculto */
+    transition: opacity 0.5s ease; /* Transición suave para el aura */
+    z-index: -1; /* Asegura que el aura esté detrás de la imagen */
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5); /* Efecto de sombra difusa */
+}
+
+/* Cuando el usuario pasa el mouse sobre la imagen */
+.project:hover {
+    animation: shake 5s ease-in-out infinite; /* Movimiento de sacudida */
+    opacity: 1;
+    transform: scale(1.2); /* Zoom más fuerte */
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.8); /* Efecto de resplandor más fuerte */
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.project:hover::after {
+    opacity: 1; /* Muestra el aura al hacer hover */
+}
+
+.project img {
+    max-width: 300px; /* Tamaño máximo de las imágenes */
+    width: 100%;
+    height: auto;
+}
+
+/* Colocación aleatoria de las imágenes */
+.project:nth-child(1) {
+    top: 10%;
+    left: 15%;
+}
+
+.project:nth-child(2) {
+    top: 50%;
+    left: 35%;
+}
+
+.project:nth-child(3) {
+    top: 30%;
+    left: 70%;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222; /* Fondo oscuro */
+    color: #fff;
+    border-top: 1px solid #333;
+}
+
+/* Estilo para el rastro de luz */
+.light-trail {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgba(255, 0, 0, 0.8); /* Rastro rojo sangre */
+    pointer-events: none;
+    animation: trailAnimation 0.5s ease-out forwards;
+}
+
+@keyframes trailAnimation {
+    0% {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.mouse-area {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/patron-fisuras-elementos-graves-elementos-terror-doodle_337399-180.avif'); /* Cambia 'background.jpg' por tu imagen de fondo */
+    background-size: cover;
+    opacity: 0.02;
+    pointer-events: none;
+}
+
+
+@keyframes shake {
+    0% {
+        transform: translateX(0) rotate(0deg);
+    }
+    25% {
+        transform: translateX(-5px) rotate(-5deg);
+    }
+    50% {
+        transform: translateX(5px) rotate(5deg);
+    }
+    75% {
+        transform: translateX(-5px) rotate(-5deg);
+    }
+    100% {
+        transform: translateX(0) rotate(0deg);
+    }
+}
+
+/* Animación de gotas de sangre */
+@keyframes bloodDrip {
+    0% {
+        top: 100%;
+        left: 50%;
+        width: 10px;
+        height: 10px;
+    }
+    100% {
+        top: 120%; /* La gota de sangre se mueve más abajo */
+        left: 50%;
+        width: 20px; /* Expande el "chorro" */
+        height: 20px;
+        opacity: 0; /* Desaparece al final */
+    }
+}
+
+

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Paz en mitos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    <header>
+        <h1>La Paz en mitos</h1>
+        <nav class="navegacion w3-opacity">
+            <a href="../categorias/categorias.html" class="inicio">CATEGORIAS</a>
+            <a href="../contextohistorico/historico.html" class="catalogo">CONTEXTO HISTÓRICO</a>
+            <a href="" class="servicio">CURIOSIDADES</a>
+            <a href="../blog/vlog.html" class="servicio">BLOG</a>
+            <a href="../nosotros/nosotros.html" class="servicio">NOSOTROS</a>
+        </nav>
+    </header>
+    <main>
+        <section id="leyendas" class="container my-5">
+            <h2>Leyendas de La Paz, Bolivia</h2>
+            <div class="row">
+                <!-- Card 1: El Apu Wamani -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://apacheta.pe/wp-content/uploads/2023/02/1-WEB-FEB-14.jpg" class="card-img-top" alt="El Apu Wamani">
+                        <div class="card-body">
+                            <h3 class="card-title">El Apu Wamani</h3>
+                            <p class="card-text">
+                                Una de las leyendas más antiguas de La Paz cuenta sobre el espíritu guardián de las montañas, conocido como Apu Wamani. Se dice que protege a los viajeros que lo respetan, pero castiga a los que lo desafían.
+                            </p>
+                            <button onclick="showMore('apuwamani')" class="btn btn-primary">Ver más</button>
+                        </div>
+                        <div class="legend-image card-footer" id="apuwamani">
+                            <p>
+                                Según la tradición, el Apu aparece como un hombre alto con ropa tradicional y un bastón de oro que brilla en la noche. Los relatos sugieren que escuchar sus pasos es señal de bendiciones o advertencia de peligro.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: La Llorona de Sopocachi -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://m.media-amazon.com/images/S/pv-target-images/499256d3ce0a903094f890b193aefe7232667230d5ac4dc5d406e9f0aa4fc570._SX1080_FMjpg_.jpg" class="card-img-top" alt="La Llorona de Sopocachi">
+                        <div class="card-body">
+                            <h3 class="card-title">La Llorona de Sopocachi</h3>
+                            <p class="card-text">
+                                En el barrio de Sopocachi, muchos aseguran haber oído los lamentos de una mujer al anochecer. La historia habla de una madre que perdió a su hijo y ahora vaga buscándolo entre las sombras.
+                            </p>
+                            <button onclick="showMore('llorona')" class="btn btn-primary">Ver más</button>
+                        </div>
+                        <div class="legend-image card-footer" id="llorona">
+                            <p>
+                                La Llorona es una figura clásica de las leyendas latinoamericanas, pero en La Paz, su versión está íntimamente ligada al Cementerio General...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: El Monje del Desaguadero -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh7LLrC_ut4jH8IAQETOwFRHc2iUp0YzksjSh2onS3LkmYTW7ihlRfMjC2gd1-fWaEFNYg3EoJP9t9Y6o_pUMQl3-HmLnwr7_fh-qoGRmPavYLoVsC757BrI8Tbg4C2snRtdoVtjfZ-bv_E/s1600/cuneo.jpg" class="card-img-top" alt="El Monje del Desaguadero">
+                        <div class="card-body">
+                            <h3 class="card-title">El Monje del Desaguadero</h3>
+                            <p class="card-text">
+                                En las cercanías del río Desaguadero, hay relatos de un monje fantasma que se aparece a los viajeros, advirtiéndoles sobre el peligro de cruzar el río en momentos de crecida.
+                            </p>
+                            <button onclick="showMore('monje')" class="btn btn-primary">Ver más</button>
+                        </div>
+                        <div class="legend-image card-footer" id="monje">
+                            <p>
+                                En el Desaguadero, un río que conecta Bolivia y Perú, se habla de un monje que vivió en un monasterio cercano en el siglo XIX...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: El Ahorcado de la Jaén -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://www.horajaen.com/wp-content/uploads/2020/11/fotonoticia_20201111122035_1920-768x1024.jpg" class="card-img-top" alt="El Ahorcado de la Jaén">
+                        <div class="card-body">
+                            <h3 class="card-title">El Ahorcado de la Jaén</h3>
+                            <p class="card-text">
+                                En la famosa Calle Jaén, una de las más antiguas de La Paz, los visitantes afirman haber visto el espíritu de un hombre que murió ahorcado. Se cree que su alma permanece atada al lugar por la traición que sufrió en la vida.
+                            </p>
+                            <button onclick="showMore('ahorcado')" class="btn btn-primary">Ver más</button>
+                        </div>
+                        <div class="legend-image card-footer" id="ahorcado">
+                            <p>
+                                La Calle Jaén es una de las más emblemáticas y misteriosas de La Paz. En esta calle, famosa por sus museos y arquitectura colonial, se cuenta la historia de un hombre acusado injustamente de traición...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: La Viuda Negra de Sopocachi -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQulMj-fSq-wwQyNu1x6r354kmpy5Tx_aPo1Q&s" class="card-img-top" alt="La Viuda Negra de Sopocachi">
+                        <div class="card-body">
+                            <h3 class="card-title">La Viuda Negra de Sopocachi</h3>
+                            <p class="card-text">
+                                Una mujer vestida de negro solía aparecer en las calles de Sopocachi. Según la leyenda, atraía a hombres para después desaparecer en el aire, dejando un perfume intenso y una sensación de muerte cercana.
+                            </p>
+                            <button onclick="showMore('viuda')" class="btn btn-primary">Ver más</button>
+                        </div>
+                        <div class="legend-image card-footer" id="viuda">
+                            <p>
+                                En el barrio de Sopocachi, se habla de una mujer vestida completamente de negro, con un velo que cubre su rostro. Según la leyenda, esta mujer era una viuda que perdió a su esposo de manera violenta...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Botón de Inclusividad -->
+    <div id="accessibility-btn" tabindex="0">
+        <span>♿</span>
+        <div id="accessibility-menu" class="hidden">
+            <button onclick="enableColorBlindMode()">
+                <i class="fas fa-eye-dropper"></i> Modo Daltonismo
+            </button>
+            <button onclick="enableHighContrast()">
+                <i class="fas fa-highlighter"></i> Modo Alto Contraste
+            </button>
+            <button onclick="increaseFontSize()">
+                <i class="fas fa-text-height"></i> Aumentar Fuente
+            </button>
+            <button onclick="resetAccessibility()">
+                <i class="fas fa-sync-alt"></i> Restablecer
+
+            </button>
+        </div>
+    </div>
+    
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
